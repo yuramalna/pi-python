@@ -184,7 +184,7 @@ mkdocs serve
 
 ## Acknowledgments
 
-This project is a Python port of the `@anthropic/pi-ai` and `@anthropic/pi-agent` TypeScript packages from [**pi-mono**](https://github.com/badlogic/pi-mono) by [**Mario Zechner**](https://github.com/badlogic) ([@badaboroc](https://twitter.com/badaboroc)). The original pi-mono is a comprehensive AI agent toolkit featuring a coding agent CLI, unified LLM API, TUI & web UI libraries, and more. We're grateful for his excellent architecture and open-source work that made this port possible.
+This project is a Python port of the `@anthropic/pi-ai` and `@anthropic/pi-agent` TypeScript packages from [**pi-mono**](https://github.com/badlogic/pi-mono) by [**Mario Zechner**](https://github.com/badlogic) ([@badaboroc](https://twitter.com/badaboroc)). The original pi-mono is a comprehensive AI agent toolkit featuring a coding agent CLI, unified LLM API, TUI & web UI libraries, and more. I'm grateful for his excellent architecture and open-source work that made this port possible.
 
 ## License
 
