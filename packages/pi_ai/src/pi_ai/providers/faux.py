@@ -8,7 +8,6 @@ hitting any real LLM API. Useful for unit and integration tests.
 from __future__ import annotations
 
 import asyncio
-import copy
 import json
 import math
 import random
@@ -43,7 +42,6 @@ from pi_ai.types import (
     ToolCallDeltaEvent,
     ToolCallEndEvent,
     ToolCallStartEvent,
-    ToolResultMessage,
     Usage,
 )
 from pi_ai.utils.event_stream import (
