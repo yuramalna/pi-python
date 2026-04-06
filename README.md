@@ -1,17 +1,27 @@
-# pi-python
+<p align="center">
+  <h1 align="center">pi-python</h1>
+  <p align="center">
+    Unified LLM provider abstraction and agent framework for Python
+  </p>
+</p>
 
-[![CI](https://github.com/yuramalna/pi-python/actions/workflows/ci.yml/badge.svg)](https://github.com/yuramalna/pi-python/actions/workflows/ci.yml)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/downloads/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+<p align="center">
+  <a href="https://github.com/yuramalna/pi-python/actions/workflows/ci.yml"><img src="https://github.com/yuramalna/pi-python/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://www.python.org/downloads/"><img src="https://img.shields.io/badge/python-3.11%2B-blue.svg" alt="Python 3.11+"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT"></a>
+  <a href="https://yuramalna.github.io/pi-python/"><img src="https://img.shields.io/badge/docs-GitHub%20Pages-blue" alt="Docs"></a>
+</p>
 
-Unified LLM provider abstraction and agent framework for Python.
+---
+
+**pi-python** is a Python port of the LLM and agent packages from [pi-mono](https://github.com/badlogic/pi-mono) by [Mario Zechner](https://github.com/badlogic). It provides a clean, typed interface for building LLM-powered applications with streaming, tool calling, and autonomous agents.
 
 ## Packages
 
-| Package | Description | |
-|---------|-------------|---|
-| **[pi-ai](packages/pi_ai/)** | Typed streaming interface for LLM API calls with tool calling, extended thinking, and cost tracking | `pip install pi-ai` |
-| **[pi-agent](packages/pi_agent/)** | Stateful agent framework with multi-turn tool execution, hooks, and event streaming | `pip install pi-agent` |
+| Package | Description | Install |
+|---------|-------------|---------|
+| **[pi-ai](packages/pi_ai/)** | Typed streaming interface for LLM calls &mdash; tool calling, extended thinking, cost tracking | `pip install pi-ai` |
+| **[pi-agent](packages/pi_agent/)** | Stateful agent framework &mdash; multi-turn tool execution, hooks, event streaming | `pip install pi-agent` |
 
 ## Quick Start
 
@@ -41,7 +51,7 @@ async def main():
 asyncio.run(main())
 ```
 
-### Build an agent
+### Build an agent with tools
 
 ```python
 import asyncio
@@ -78,9 +88,8 @@ async def main():
     ))
 
     def on_event(event, cancellation):
-        if event.type == "message_update":
-            if hasattr(event.assistant_message_event, "delta"):
-                print(event.assistant_message_event.delta, end="", flush=True)
+        if event.type == "message_update" and hasattr(event.assistant_message_event, "delta"):
+            print(event.assistant_message_event.delta, end="", flush=True)
         elif event.type == "tool_execution_start":
             print(f"\n  [calling {event.tool_name}]")
         elif event.type == "agent_end":
@@ -92,34 +101,61 @@ async def main():
 asyncio.run(main())
 ```
 
+## Why pi-python?
+
+Most Python LLM libraries either lock you into one provider or bury you in abstraction layers. pi-python gives you:
+
+- **Typed streaming events** &mdash; 12 event types you can `async for` over, not string parsing
+- **Real tool execution** &mdash; JSON Schema validation, before/after hooks, sequential or parallel
+- **Agent state you control** &mdash; inspect messages, pending tool calls, and streaming state at any point
+- **Extended thinking** &mdash; 5 reasoning levels from `minimal` to `xhigh`
+- **Cost awareness** &mdash; token usage and dollar cost tracking for 42 OpenAI models
+
 ## Features
 
-**pi-ai** - LLM Provider Abstraction
-- Streaming and non-streaming APIs (`stream_simple`, `complete_simple`)
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### pi-ai &mdash; LLM Abstraction
+
+- `stream_simple` / `complete_simple` &mdash; streaming and non-streaming
 - 12 typed streaming event types with async iteration
 - Tool calling with JSON Schema validation
-- Extended thinking / reasoning support (5 levels)
-- Token usage and cost tracking (42 OpenAI models)
-- Context overflow detection across 20+ providers
+- Extended thinking / reasoning (5 levels)
+- Token usage and cost tracking
+- Context overflow detection (20+ providers)
 - Prompt caching support
+- Pydantic models throughout
 
-**pi-agent** - Agent Framework
+</td>
+<td width="50%" valign="top">
+
+### pi-agent &mdash; Agent Framework
+
 - Stateful `Agent` class with multi-turn conversation
-- Tool execution (sequential or parallel) with `AgentTool`
+- `AgentTool` with `execute()` &mdash; sequential or parallel
 - 10 agent event types with subscriber pattern
 - Before/after tool call hooks
 - Steering and follow-up message queues
-- Cooperative cancellation
+- Cooperative cancellation with `CancellationToken`
 - Low-level `agent_loop` for custom control flows
+- Faux provider for deterministic testing
+
+</td>
+</tr>
+</table>
 
 ## Documentation
 
-Full documentation is available at **[yuramalna.github.io/pi-python](https://yuramalna.github.io/pi-python/)**.
+Full documentation at **[yuramalna.github.io/pi-python](https://yuramalna.github.io/pi-python/)**
 
-- [Getting Started](https://yuramalna.github.io/pi-python/getting-started/)
-- [pi-ai Concepts](https://yuramalna.github.io/pi-python/pi_ai/)
-- [pi-agent Concepts](https://yuramalna.github.io/pi-python/pi_agent/)
-- [API Reference](https://yuramalna.github.io/pi-python/pi_ai/reference/)
+| | |
+|---|---|
+| [Getting Started](https://yuramalna.github.io/pi-python/getting-started/) | Install, first LLM call, first agent |
+| [pi-ai Concepts](https://yuramalna.github.io/pi-python/pi_ai/) | Streaming, events, tools, thinking, cost tracking |
+| [pi-agent Concepts](https://yuramalna.github.io/pi-python/pi_agent/) | Agent lifecycle, loop, hooks, steering, cancellation |
+| [API Reference](https://yuramalna.github.io/pi-python/pi_ai/reference/) | Auto-generated from source docstrings |
 
 ## Development
 
@@ -135,13 +171,20 @@ pip install -e "packages/pi_agent[dev]"
 # Install docs dependencies
 pip install mkdocs-material 'mkdocstrings[python]' mkdocs-gen-files mkdocs-section-index
 
-# Run tests
+# Run tests (322 total)
 pytest packages/pi_ai/tests/ --ignore=packages/pi_ai/tests/integration
 pytest packages/pi_agent/tests/ --ignore=packages/pi_agent/tests/integration
+
+# Lint
+ruff check packages/pi_ai/src/ packages/pi_agent/src/
 
 # Serve docs locally
 mkdocs serve
 ```
+
+## Acknowledgments
+
+This project is a Python port of the `@anthropic/pi-ai` and `@anthropic/pi-agent` TypeScript packages from [**pi-mono**](https://github.com/badlogic/pi-mono) by [**Mario Zechner**](https://github.com/badlogic) ([@badaboroc](https://twitter.com/badaboroc)). The original pi-mono is a comprehensive AI agent toolkit featuring a coding agent CLI, unified LLM API, TUI & web UI libraries, and more. We're grateful for his excellent architecture and open-source work that made this port possible.
 
 ## License
 
