@@ -1,0 +1,54 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pi-agent"
+version = "0.1.0"
+description = "General-purpose agent framework"
+requires-python = ">=3.11"
+dependencies = [
+    "pi-ai",
+    "pydantic>=2.0,<3.0",
+    "jsonschema>=4.20",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=1.0",
+    "ruff>=0.11",
+    "mypy>=1.15",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pi_agent"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = [
+    "integration: requires OPENAI_API_KEY environment variable",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501", "B008", "RUF022", "SIM1", "UP007"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pi_ai", "pi_agent"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["pi_agent.types", "pi_agent.agent_loop"]
+disable_error_code = ["valid-type", "misc", "arg-type"]

@@ -1,0 +1,101 @@
+site_name: pi-python Documentation
+site_description: Unified LLM provider abstraction and agent framework for Python
+repo_url: https://github.com/yuramalna/pi-python
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          paths:
+            - packages/pi_ai/src
+            - packages/pi_agent/src
+          options:
+            docstring_style: google
+            show_source: false
+            show_root_heading: true
+            show_root_full_path: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            members_order: source
+            merge_init_into_class: true
+            show_if_no_docstring: false
+            inherited_members: false
+  - gen-files:
+      scripts:
+        - docs/gen_ref_pages.py
+  - section-index
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.snippets
+  - toc:
+      permalink: true
+  - attr_list
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - pi-ai:
+    - pi_ai/index.md
+    - Quickstart: pi_ai/quickstart.md
+    - Concepts:
+      - Models & Providers: pi_ai/concepts/models-and-providers.md
+      - Streaming: pi_ai/concepts/streaming.md
+      - Events: pi_ai/concepts/events.md
+      - Messages & Context: pi_ai/concepts/messages-and-context.md
+      - Tools: pi_ai/concepts/tools.md
+      - Thinking / Reasoning: pi_ai/concepts/thinking.md
+      - Cost Tracking: pi_ai/concepts/cost-tracking.md
+    - How-to Guides:
+      - Handle Tool Calls: pi_ai/howto/handle-tool-calls.md
+      - Add Image Input: pi_ai/howto/add-image-input.md
+      - Handle Errors: pi_ai/howto/handle-errors.md
+    - API Reference: pi_ai/reference/index.md
+  - pi-agent:
+    - pi_agent/index.md
+    - Quickstart: pi_agent/quickstart.md
+    - Concepts:
+      - Agent Lifecycle: pi_agent/concepts/agent-lifecycle.md
+      - Agent Loop: pi_agent/concepts/agent-loop.md
+      - Events: pi_agent/concepts/events.md
+      - Tools: pi_agent/concepts/tools.md
+      - Hooks: pi_agent/concepts/hooks.md
+      - Steering & Follow-up: pi_agent/concepts/steering-followup.md
+      - Cancellation: pi_agent/concepts/cancellation.md
+    - How-to Guides:
+      - Build a Research Agent: pi_agent/howto/build-research-agent.md
+      - Custom Message Types: pi_agent/howto/custom-message-types.md
+      - Control Tool Execution: pi_agent/howto/control-tool-execution.md
+    - API Reference: pi_agent/reference/index.md

@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pi-ai"
+version = "0.1.0"
+description = "Unified LLM provider abstraction"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0,<3.0",
+    "openai>=2.20.0",
+    "jsonschema>=4.0",
+    "json-repair>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=1.0",
+    "ruff>=0.11",
+    "mypy>=1.15",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pi_ai"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = [
+    "integration: requires OPENAI_API_KEY environment variable",
+]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["E501", "B008", "RUF022", "SIM1"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["pi_ai"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+check_untyped_defs = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[tool.pydantic-mypy]
+init_forbid_extra = false
+init_typed = false
+warn_required_dynamic_aliases = false
+
+[[tool.mypy.overrides]]
+module = [
+    "pi_ai.providers.transform_messages",
+    "pi_ai.providers.openai_responses_shared",
+    "pi_ai.providers.register_builtins",
+    "pi_ai.stream",
+]
+disable_error_code = ["arg-type", "no-any-return", "no-redef", "index", "assignment"]
