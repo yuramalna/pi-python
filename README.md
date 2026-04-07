@@ -114,29 +114,24 @@ Most Python LLM libraries either lock you into one provider or bury you in abstr
 - **Extended thinking** — 5 reasoning levels from `minimal` to `xhigh`
 - **Cost awareness** — token usage and dollar cost tracking for 42 OpenAI models
 
-## Architecture
+## How It Works
 
+```mermaid
+flowchart LR
+    A[User Prompt] --> B[Agent]
+    B --> C[LLM Call<br/>stream_simple]
+    C --> D{Tool calls?}
+    D -- Yes --> E[Execute Tools]
+    E --> F[Tool Results]
+    F --> C
+    D -- No --> G[Final Response]
+
+    style B fill:#4f46e5,color:#fff
+    style C fill:#0891b2,color:#fff
+    style E fill:#059669,color:#fff
 ```
-┌──────────────────────────────────────────────────┐
-│                  Your Application                 │
-├──────────────────────────────────────────────────┤
-│             pi-llm-agent  (pip install pi-llm-agent)            │
-│  ┌─────────┐ ┌────────┐ ┌───────┐ ┌──────────┐ │
-│  │  Agent  │ │ Tools  │ │ Hooks │ │ Events   │ │
-│  │  Loop   │ │AgentTool│ │before/│ │10 types  │ │
-│  │  State  │ │execute()│ │ after │ │subscribe │ │
-│  └─────────┘ └────────┘ └───────┘ └──────────┘ │
-├──────────────────────────────────────────────────┤
-│                pi-llm  (pip install pi-llm)                     │
-│  ┌─────────┐ ┌────────┐ ┌───────┐ ┌──────────┐ │
-│  │ Stream  │ │ Models │ │ Tools │ │  Events  │ │
-│  │stream_  │ │get_model│ │  JSON │ │12 types  │ │
-│  │simple() │ │  42+   │ │Schema │ │async iter│ │
-│  └─────────┘ └────────┘ └───────┘ └──────────┘ │
-├──────────────────────────────────────────────────┤
-│              OpenAI Responses API                 │
-└──────────────────────────────────────────────────┘
-```
+
+**pi-llm** handles the LLM call (streaming events, tool validation, cost tracking). **pi-llm-agent** manages the loop — calling the LLM, executing tools, and repeating until done.
 
 ## Features
 
