@@ -20,13 +20,13 @@
 
 | Package | Description | Install |
 |---------|-------------|---------|
-| **[pi-ai](packages/pi_ai/)** | Typed streaming interface for LLM calls &mdash; tool calling, extended thinking, cost tracking | `pip install pi-ai` |
-| **[pi-ai-agent](packages/pi_agent/)** | Stateful agent framework &mdash; multi-turn tool execution, hooks, event streaming | `pip install pi-ai-agent` |
+| **[pi-llm](packages/pi_ai/)** | Typed streaming interface for LLM calls &mdash; tool calling, extended thinking, cost tracking | `pip install pi-llm` |
+| **[pi-llm-agent](packages/pi_agent/)** | Stateful agent framework &mdash; multi-turn tool execution, hooks, event streaming | `pip install pi-llm-agent` |
 
 ## Quick Start
 
 ```bash
-pip install pi-ai pi-ai-agent
+pip install pi-llm pi-llm-agent
 export OPENAI_API_KEY=sk-...
 ```
 
@@ -166,7 +166,7 @@ python -m venv .venv && source .venv/bin/activate
 
 # Install both packages in dev mode
 pip install -e "packages/pi_ai[dev]"
-pip install -e "packages/pi_agent[dev]"  # PyPI name: pi-ai-agent
+pip install -e "packages/pi_agent[dev]"  # PyPI name: pi-llm-agent
 
 # Install docs dependencies
 pip install mkdocs-material 'mkdocstrings[python]' mkdocs-gen-files mkdocs-section-index

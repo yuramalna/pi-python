@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pi-ai"
-version = "0.1.0"
+name = "pi-llm"
+version = "0.1.1"
 description = "Unified LLM provider abstraction for Python — streaming, tool calling, extended thinking, cost tracking"
 requires-python = ">=3.11"
 license = "MIT"

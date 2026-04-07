@@ -3,8 +3,8 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pi-ai-agent"
-version = "0.1.0"
+name = "pi-llm-agent"
+version = "0.1.1"
 description = "General-purpose agent framework for Python — multi-turn tool execution, hooks, event streaming"
 requires-python = ">=3.11"
 license = "MIT"
@@ -25,7 +25,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "pi-ai>=0.1.0",
+    "pi-llm>=0.1.1",
     "pydantic>=2.0,<3.0",
     "jsonschema>=4.20",
 ]
