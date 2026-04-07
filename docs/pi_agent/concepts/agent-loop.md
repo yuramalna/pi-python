@@ -1,6 +1,6 @@
 # Agent Loop
 
-The agent loop is the low-level multi-turn execution engine that powers the `Agent` class. It manages the cycle of calling the LLM, executing tool calls, and repeating until the task is complete.
+The agent loop is the low-level multi-turn execution engine that powers the `Agent` class in pi-llm-agent. It manages the cycle of calling the LLM, executing tool calls, and repeating until the task is complete.
 
 ## Overview
 

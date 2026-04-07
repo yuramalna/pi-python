@@ -1,6 +1,6 @@
 # Messages & Context
 
-pi-ai uses typed message objects to represent a conversation. The `Context` object bundles messages with a system prompt and tool definitions, forming the complete input for an LLM call.
+pi-llm uses typed message objects to represent a conversation. The `Context` object bundles messages with a system prompt and tool definitions, forming the complete input for an LLM call.
 
 ## Message types
 

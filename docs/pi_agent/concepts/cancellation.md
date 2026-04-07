@@ -1,6 +1,6 @@
 # Cancellation
 
-pi-agent uses cooperative cancellation via `CancellationToken`. Tokens are passed to event listeners and tool `execute()` methods, allowing graceful shutdown at any point in the agent loop.
+pi-llm-agent uses cooperative cancellation via `CancellationToken`. Tokens are passed to event listeners and tool `execute()` methods, allowing graceful shutdown at any point in the agent loop.
 
 ## Overview
 

@@ -1,6 +1,6 @@
 # Agent Lifecycle
 
-The `Agent` class is the primary public API for pi-agent. It wraps the low-level agent loop, managing conversation state, tool execution, event dispatch, and message queueing.
+The `Agent` class is the primary public API for pi-llm-agent. It wraps the low-level agent loop, managing conversation state, tool execution, event dispatch, and message queueing.
 
 ## Creating an agent
 

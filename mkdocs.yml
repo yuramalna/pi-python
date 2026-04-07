@@ -67,7 +67,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
-  - pi-ai:
+  - pi-llm:
     - pi_ai/index.md
     - Quickstart: pi_ai/quickstart.md
     - Concepts:
@@ -83,7 +83,7 @@ nav:
       - Add Image Input: pi_ai/howto/add-image-input.md
       - Handle Errors: pi_ai/howto/handle-errors.md
     - API Reference: pi_ai/reference/index.md
-  - pi-agent:
+  - pi-llm-agent:
     - pi_agent/index.md
     - Quickstart: pi_agent/quickstart.md
     - Concepts:

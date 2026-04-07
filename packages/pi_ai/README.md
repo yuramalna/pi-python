@@ -1,4 +1,4 @@
-# pi-ai
+# pi-llm
 
 Unified LLM provider abstraction for Python. Provides streaming and non-streaming interfaces to LLM APIs with automatic model discovery, token and cost tracking, and tool call support.
 
@@ -21,7 +21,7 @@ More providers coming soon.
 ## Installation
 
 ```bash
-pip install pi-ai
+pip install pi-llm
 ```
 
 ## Quick Start

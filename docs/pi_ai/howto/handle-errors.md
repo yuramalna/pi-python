@@ -1,10 +1,10 @@
 # Handle Errors
 
-This guide covers error handling in pi-ai: detecting errors in the event stream, handling context overflow, and using cancellation to abort requests.
+This guide covers error handling in pi-llm: detecting errors in the event stream, handling context overflow, and using cancellation to abort requests.
 
 ## Overview
 
-Errors in pi-ai surface through three mechanisms:
+Errors in pi-llm surface through three mechanisms:
 
 - **`ErrorEvent`** -- Emitted when streaming ends due to an error or cancellation.
 - **`is_context_overflow()`** -- Utility to detect context window overflow errors.

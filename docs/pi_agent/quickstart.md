@@ -1,14 +1,14 @@
-# pi-agent Quickstart
+# pi-llm-agent Quickstart
 
 This guide walks you through building your first agent: creating tools, configuring the agent, subscribing to events, and sending prompts.
 
 ## Installation
 
 ```bash
-pip install pi-agent
+pip install pi-llm-agent
 ```
 
-pi-agent depends on pi-ai, which will be installed automatically.
+pi-llm-agent depends on pi-llm, which will be installed automatically.
 
 ## Your first agent
 

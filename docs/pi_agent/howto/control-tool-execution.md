@@ -4,7 +4,7 @@ This guide covers how to control whether tools run sequentially or in parallel, 
 
 ## Overview
 
-By default, when the LLM requests multiple tool calls in a single response, pi-agent executes them in parallel. You can switch to sequential execution or use hooks to add authorization, logging, or result modification.
+By default, when the LLM requests multiple tool calls in a single response, pi-llm-agent executes them in parallel. You can switch to sequential execution or use hooks to add authorization, logging, or result modification.
 
 ## Execution modes
 

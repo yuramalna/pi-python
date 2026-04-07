@@ -4,7 +4,7 @@ Hooks let you intercept tool calls before and after execution. Use them for auth
 
 ## Overview
 
-pi-agent provides two hook points:
+pi-llm-agent provides two hook points:
 
 - **`before_tool_call`** -- Called before a tool executes. Can block execution.
 - **`after_tool_call`** -- Called after a tool executes. Can override the result.

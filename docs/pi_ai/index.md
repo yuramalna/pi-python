@@ -1,8 +1,8 @@
-# pi-ai
+# pi-llm
 
 Unified LLM provider abstraction for Python.
 
-pi-ai provides a clean, typed interface for making LLM API calls with streaming events, tool calling, extended thinking, and cost tracking.
+pi-llm provides a clean, typed interface for making LLM API calls with streaming events, tool calling, extended thinking, and cost tracking.
 
 ## Key Concepts
 

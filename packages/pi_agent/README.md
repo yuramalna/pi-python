@@ -1,4 +1,4 @@
-# pi-agent
+# pi-llm-agent
 
 General-purpose agent framework with tool execution and event streaming. Built on [pi-ai](../pi_ai/).
 
@@ -15,10 +15,10 @@ General-purpose agent framework with tool execution and event streaming. Built o
 ## Installation
 
 ```bash
-pip install pi-agent
+pip install pi-llm-agent
 ```
 
-Requires `pi-ai` (installed automatically as a dependency).
+Requires `pi-llm` (installed automatically as a dependency).
 
 ## Quick Start
 

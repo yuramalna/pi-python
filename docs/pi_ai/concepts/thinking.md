@@ -1,6 +1,6 @@
 # Thinking / Reasoning
 
-Some LLM models support extended thinking (also called reasoning), where the model explicitly works through a problem before producing its final answer. pi-ai provides first-class support for controlling reasoning levels and observing thinking events.
+Some LLM models support extended thinking (also called reasoning), where the model explicitly works through a problem before producing its final answer. pi-llm provides first-class support for controlling reasoning levels and observing thinking events.
 
 ## ThinkingLevel
 

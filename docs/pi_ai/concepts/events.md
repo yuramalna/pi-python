@@ -1,6 +1,6 @@
 # Events
 
-When you stream a response with `stream_simple` or `stream`, pi-ai emits a sequence of typed events. There are 12 event types in total, grouped into four families: lifecycle, text, thinking, and tool calls.
+When you stream a response with `stream_simple` or `stream`, pi-llm emits a sequence of typed events. There are 12 event types in total, grouped into four families: lifecycle, text, thinking, and tool calls.
 
 ## Event type overview
 

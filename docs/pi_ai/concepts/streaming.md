@@ -1,6 +1,6 @@
 # Streaming
 
-pi-ai provides four top-level functions for making LLM calls. Two are "simple" (handle reasoning automatically) and two are "raw" (accept provider-specific options). Each pair has a streaming variant and a non-streaming convenience wrapper.
+pi-llm provides four top-level functions for making LLM calls. Two are "simple" (handle reasoning automatically) and two are "raw" (accept provider-specific options). Each pair has a streaming variant and a non-streaming convenience wrapper.
 
 ## The four functions
 

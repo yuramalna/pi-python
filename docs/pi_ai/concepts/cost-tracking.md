@@ -1,6 +1,6 @@
 # Cost Tracking
 
-pi-ai tracks token usage and calculates dollar costs for every LLM request. The `Usage` and `CostBreakdown` types provide detailed breakdowns of input, output, and cache tokens.
+pi-llm tracks token usage and calculates dollar costs for every LLM request. The `Usage` and `CostBreakdown` types provide detailed breakdowns of input, output, and cache tokens.
 
 ## Key types
 

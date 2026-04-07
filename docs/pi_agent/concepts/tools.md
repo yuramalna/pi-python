@@ -1,6 +1,6 @@
 # Tools
 
-In pi-agent, tools are implemented as `AgentTool` subclasses. Each tool has a name, description, JSON Schema for parameters, and an async `execute()` method that performs the actual work.
+In pi-llm-agent, tools are implemented as `AgentTool` subclasses. Each tool has a name, description, JSON Schema for parameters, and an async `execute()` method that performs the actual work.
 
 ## Defining a tool with a subclass
 
@@ -190,9 +190,9 @@ class FlexibleTool(AgentTool):
 
 This runs before JSON Schema validation, so the transformed arguments must match the schema.
 
-## Converting to pi-ai Tool
+## Converting to pi-llm Tool
 
-`AgentTool` has a `to_tool()` method that produces a pi-ai `Tool` for inclusion in LLM context. The agent calls this internally, but you can use it directly:
+`AgentTool` has a `to_tool()` method that produces a pi-llm `Tool` for inclusion in LLM context. The agent calls this internally, but you can use it directly:
 
 ```python
 pi_ai_tool = my_agent_tool.to_tool()

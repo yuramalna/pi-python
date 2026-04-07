@@ -97,6 +97,6 @@ asyncio.run(main())
 
 ## Next steps
 
-- [pi-ai Quickstart](pi_ai/quickstart.md) — Deeper dive into streaming, events, and tools
-- [pi-agent Quickstart](pi_agent/quickstart.md) — Agent lifecycle, hooks, and state management
+- [pi-llm Quickstart](pi_ai/quickstart.md) — Deeper dive into streaming, events, and tools
+- [pi-llm-agent Quickstart](pi_agent/quickstart.md) — Agent lifecycle, hooks, and state management
 - [Build a Research Agent](pi_agent/howto/build-research-agent.md) — Full tutorial with web search

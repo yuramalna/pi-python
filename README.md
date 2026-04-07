@@ -117,7 +117,7 @@ Most Python LLM libraries either lock you into one provider or bury you in abstr
 <tr>
 <td width="50%" valign="top">
 
-### pi-ai &mdash; LLM Abstraction
+### pi-llm &mdash; LLM Abstraction
 
 - `stream_simple` / `complete_simple` &mdash; streaming and non-streaming
 - 12 typed streaming event types with async iteration
@@ -131,7 +131,7 @@ Most Python LLM libraries either lock you into one provider or bury you in abstr
 </td>
 <td width="50%" valign="top">
 
-### pi-agent &mdash; Agent Framework
+### pi-llm-agent &mdash; Agent Framework
 
 - Stateful `Agent` class with multi-turn conversation
 - `AgentTool` with `execute()` &mdash; sequential or parallel

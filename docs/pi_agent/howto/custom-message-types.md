@@ -4,7 +4,7 @@ This guide explains how to use custom message types in the agent's conversation 
 
 ## Overview
 
-The agent's message list (`agent.state.messages`) can contain any Python object, not just pi-ai message types. This is useful for application-specific messages (status updates, metadata, UI events) that should be part of the transcript but should not be sent to the LLM.
+The agent's message list (`agent.state.messages`) can contain any Python object, not just pi-llm message types. This is useful for application-specific messages (status updates, metadata, UI events) that should be part of the transcript but should not be sent to the LLM.
 
 ## convert_to_llm
 

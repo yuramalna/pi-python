@@ -14,7 +14,7 @@ The agent loop handles everything automatically: when the LLM decides to search,
 ## Prerequisites
 
 ```bash
-pip install pi-agent httpx
+pip install pi-llm-agent httpx
 ```
 
 You will need API keys for:

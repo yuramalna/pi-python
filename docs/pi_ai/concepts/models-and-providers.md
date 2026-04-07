@@ -1,6 +1,6 @@
 # Models & Providers
 
-pi-ai uses a registry-based architecture to support multiple LLM providers through a unified interface. Models are descriptors that carry all the metadata needed to make API calls, and providers are the adapters that translate pi-ai's streaming protocol into provider-specific API calls.
+pi-llm uses a registry-based architecture to support multiple LLM providers through a unified interface. Models are descriptors that carry all the metadata needed to make API calls, and providers are the adapters that translate pi-llm's streaming protocol into provider-specific API calls.
 
 ## Key concepts
 

@@ -108,7 +108,7 @@ if isinstance(event, AgentMessageStartEvent):
 
 ### AgentMessageUpdateEvent
 
-Emitted for incremental streaming updates on assistant messages. Contains both the partial agent message and the underlying pi-ai streaming event.
+Emitted for incremental streaming updates on assistant messages. Contains both the partial agent message and the underlying pi-llm streaming event.
 
 ```python
 from pi_agent import AgentMessageUpdateEvent
@@ -120,7 +120,7 @@ if isinstance(event, AgentMessageUpdateEvent):
         print(inner.delta, end="", flush=True)
 ```
 
-This is the primary event for building real-time UIs -- the `assistant_message_event` gives you access to the full pi-ai event (text deltas, thinking deltas, tool call deltas, etc.).
+This is the primary event for building real-time UIs -- the `assistant_message_event` gives you access to the full pi-llm event (text deltas, thinking deltas, tool call deltas, etc.).
 
 ### AgentMessageEndEvent
 

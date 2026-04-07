@@ -4,7 +4,7 @@ Unified LLM provider abstraction and agent framework for Python.
 
 ## Packages
 
-### [pi-ai](pi_ai/index.md)
+### [pi-llm](pi_ai/index.md)
 
 Streaming LLM API with model discovery, tool calling, token tracking, and cost calculation.
 
@@ -13,7 +13,7 @@ Streaming LLM API with model discovery, tool calling, token tracking, and cost c
 - Track token usage and dollar costs
 - Support for extended thinking / reasoning
 
-### [pi-agent](pi_agent/index.md)
+### [pi-llm-agent](pi_agent/index.md)
 
 Stateful agent framework with tool execution, event streaming, and lifecycle management.
 
@@ -26,6 +26,6 @@ Stateful agent framework with tool execution, event streaming, and lifecycle man
 ## Quick Links
 
 - [Getting Started](getting-started.md) — Install and run your first example
-- [pi-ai Quickstart](pi_ai/quickstart.md) — Streaming, completing, and tool calls
-- [pi-agent Quickstart](pi_agent/quickstart.md) — Build an agent with tools
+- [pi-llm Quickstart](pi_ai/quickstart.md) — Streaming, completing, and tool calls
+- [pi-llm-agent Quickstart](pi_agent/quickstart.md) — Build an agent with tools
 - [Build a Research Agent](pi_agent/howto/build-research-agent.md) — End-to-end tutorial

@@ -1,11 +1,11 @@
-# pi-ai Quickstart
+# pi-llm Quickstart
 
-This guide walks you through your first LLM call with pi-ai: streaming text, collecting a complete response, and handling tool calls.
+This guide walks you through your first LLM call with pi-llm: streaming text, collecting a complete response, and handling tool calls.
 
 ## Installation
 
 ```bash
-pip install pi-ai
+pip install pi-llm
 ```
 
 ## Basic streaming
@@ -143,7 +143,7 @@ asyncio.run(main())
 
 ## Streaming with tool calls
 
-pi-ai supports tool use. Define a `Tool` with a JSON Schema, then handle `ToolCallEndEvent` in the event stream.
+pi-llm supports tool use. Define a `Tool` with a JSON Schema, then handle `ToolCallEndEvent` in the event stream.
 
 ```python
 import asyncio

@@ -1,6 +1,6 @@
 # Tools
 
-Tools enable LLMs to interact with external systems by calling named functions with structured arguments. In pi-ai, tools are defined with a name, description, and a JSON Schema for their parameters.
+Tools enable LLMs to interact with external systems by calling named functions with structured arguments. In pi-llm, tools are defined with a name, description, and a JSON Schema for their parameters.
 
 ## Defining a tool
 
@@ -148,7 +148,7 @@ The `ToolCall` object returned in `ToolCallEndEvent.tool_call` has these fields:
 
 ## Validating tool arguments
 
-pi-ai provides utilities to validate tool call arguments against the schema:
+pi-llm provides utilities to validate tool call arguments against the schema:
 
 ```python
 from pi_ai import validate_tool_call, validate_tool_arguments
