@@ -8,18 +8,16 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: github.ref_type == 'tag' && contains(github.event.base_ref, 'main') || github.sha == github.event.repository.default_branch
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Verify tag is on main
         run: |
-          git branch --contains "$GITHUB_SHA" | grep -q 'main' || {
+          git fetch origin main --depth=1
+          if ! git merge-base --is-ancestor "$GITHUB_SHA" origin/main; then
             echo "Tag is not on main branch. Aborting."
             exit 1
-          }
+          fi
 
       - name: Set up Python
         uses: actions/setup-python@v5
