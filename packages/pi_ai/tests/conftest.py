@@ -1,4 +1,4 @@
-"""Shared fixtures for pi_ai unit tests."""
+"""Shared fixtures for pi_llm unit tests."""
 
 import pytest
 

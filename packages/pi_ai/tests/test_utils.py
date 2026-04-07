@@ -1,4 +1,4 @@
-"""Tests for pi_ai utility functions."""
+"""Tests for pi_llm utility functions."""
 
 import pytest
 

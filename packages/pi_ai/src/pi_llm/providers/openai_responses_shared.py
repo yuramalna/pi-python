@@ -103,7 +103,7 @@ def convert_responses_messages(
     *,
     include_system_prompt: bool = True,
 ) -> list[dict]:
-    """Convert pi_ai messages to OpenAI Responses API input format (mirrors TS lines 86-261)."""
+    """Convert pi_llm messages to OpenAI Responses API input format (mirrors TS lines 86-261)."""
     messages: list[dict] = []
 
     def normalize_tool_call_id(
@@ -270,7 +270,7 @@ def convert_responses_messages(
 
 
 def convert_responses_tools(tools: list[Tool], *, strict: bool = False) -> list[dict]:
-    """Convert pi_ai Tool definitions to OpenAI function tool dicts (mirrors TS lines 267-276)."""
+    """Convert pi_llm Tool definitions to OpenAI function tool dicts (mirrors TS lines 267-276)."""
     return [
         {
             "type": "function",
@@ -289,7 +289,7 @@ def convert_responses_tools(tools: list[Tool], *, strict: bool = False) -> list[
 
 
 def map_stop_reason(status: str | None) -> StopReason:
-    """Map OpenAI response status to pi_ai StopReason (mirrors TS lines 507-526)."""
+    """Map OpenAI response status to pi_llm StopReason (mirrors TS lines 507-526)."""
     if not status:
         return "stop"
     mapping: dict[str, StopReason] = {

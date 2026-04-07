@@ -1,4 +1,4 @@
-"""pi_ai.providers — Provider implementations and helpers."""
+"""pi_llm.providers — Provider implementations and helpers."""
 
 from pi_llm.providers.openai_responses import (
     OpenAIResponsesOptions,

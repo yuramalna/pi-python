@@ -1,4 +1,4 @@
-"""Shared fixtures for pi_agent unit tests."""
+"""Shared fixtures for pi_llm_agent unit tests."""
 
 import asyncio
 import time

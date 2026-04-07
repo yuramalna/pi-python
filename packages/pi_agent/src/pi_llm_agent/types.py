@@ -30,7 +30,7 @@ if TYPE_CHECKING:
 # ---------------------------------------------------------------------------
 
 AgentThinkingLevel = Literal["off", "minimal", "low", "medium", "high", "xhigh"]
-"""Extended thinking level for the agent. Includes ``"off"`` (pi_ai's
+"""Extended thinking level for the agent. Includes ``"off"`` (pi_llm's
 ``ThinkingLevel`` does not)."""
 
 ToolExecutionMode = Literal["sequential", "parallel"]
@@ -152,7 +152,7 @@ class AgentTool:
         raise NotImplementedError
 
     def to_tool(self) -> Tool:
-        """Convert to a pi_ai ``Tool`` for inclusion in LLM context."""
+        """Convert to a pi_llm ``Tool`` for inclusion in LLM context."""
         return Tool(name=self.name, description=self.description, parameters=self.parameters)
 
     @classmethod
@@ -360,7 +360,7 @@ class AgentMessageUpdateEvent:
 
     Attributes:
         message: The partial assistant message being built.
-        assistant_message_event: The underlying pi_ai streaming event.
+        assistant_message_event: The underlying pi_llm streaming event.
     """
 
     message: Any

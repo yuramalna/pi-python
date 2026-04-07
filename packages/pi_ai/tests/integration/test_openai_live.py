@@ -1,4 +1,4 @@
-"""Integration tests for pi_ai with real OpenAI API.
+"""Integration tests for pi_llm with real OpenAI API.
 
 Requires OPENAI_API_KEY environment variable.
 """

@@ -1,4 +1,4 @@
-"""Integration test configuration for pi_agent.
+"""Integration test configuration for pi_llm_agent.
 
 All tests in this directory require OPENAI_API_KEY.
 Run: export $(cat ../../../../.env | xargs) && pytest tests/integration/ -v

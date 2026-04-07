@@ -1,4 +1,4 @@
-"""pi_agent — General-purpose agent framework."""
+"""pi_llm_agent — General-purpose agent framework."""
 
 from pi_llm_agent.agent import (
     DEFAULT_MODEL,

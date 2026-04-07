@@ -1,4 +1,4 @@
-"""pi_ai — Unified LLM provider abstraction."""
+"""pi_llm — Unified LLM provider abstraction."""
 
 from pi_llm.api_registry import (
     clear_api_providers,

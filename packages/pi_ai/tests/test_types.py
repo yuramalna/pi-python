@@ -1,4 +1,4 @@
-"""Tests for pi_ai core types — milestone 1 verification."""
+"""Tests for pi_llm core types — milestone 1 verification."""
 
 from pydantic import BaseModel, TypeAdapter
 

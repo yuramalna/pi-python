@@ -1,7 +1,7 @@
-"""Core type definitions for pi_ai.
+"""Core type definitions for pi_llm.
 
 Pydantic models, type aliases, streaming events, and configuration dataclasses
-used throughout the pi_ai library.
+used throughout the pi_llm library.
 """
 
 from __future__ import annotations

@@ -1,4 +1,4 @@
-"""pi_ai.utils — Streaming infrastructure and utility functions."""
+"""pi_llm.utils — Streaming infrastructure and utility functions."""
 
 from pi_llm.utils.event_stream import (
     AssistantMessageEventStream,
