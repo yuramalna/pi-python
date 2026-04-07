@@ -1,6 +1,6 @@
 """Tests for Unicode surrogate handling."""
 
-from pi_ai import sanitize_surrogates
+from pi_llm import sanitize_surrogates
 
 
 class TestSanitizeSurrogates:

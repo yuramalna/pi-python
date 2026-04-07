@@ -4,7 +4,7 @@ Call ``register_builtin_providers()`` once at startup before using
 the streaming API.
 """
 
-from pi_ai.api_registry import clear_api_providers, register_api_provider
+from pi_llm.api_registry import clear_api_providers, register_api_provider
 
 
 def register_builtin_providers() -> None:
@@ -14,7 +14,7 @@ def register_builtin_providers() -> None:
     before ``stream_simple()`` or ``complete_simple()`` will work.
     """
     try:
-        from pi_ai.providers.openai_responses import (
+        from pi_llm.providers.openai_responses import (
             stream_openai_responses,
             stream_simple_openai_responses,
         )

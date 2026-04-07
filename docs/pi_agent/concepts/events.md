@@ -22,7 +22,7 @@ The agent emits events at every stage of processing. There are 10 event types, g
 Use `agent.subscribe()` to receive events. The callback receives the event and a `CancellationToken`:
 
 ```python
-from pi_agent import CancellationToken
+from pi_llm_agent import CancellationToken
 
 def on_event(event, cancellation: CancellationToken):
     print(f"Event: {event.type}")
@@ -52,7 +52,7 @@ unsubscribe()
 Emitted once when the agent loop begins processing (at the start of `prompt()` or `continue_()`).
 
 ```python
-from pi_agent import AgentStartEvent
+from pi_llm_agent import AgentStartEvent
 
 if isinstance(event, AgentStartEvent):
     print("Agent started")
@@ -63,7 +63,7 @@ if isinstance(event, AgentStartEvent):
 Emitted when the agent loop finishes. Contains all messages added during the run.
 
 ```python
-from pi_agent import AgentEndEvent
+from pi_llm_agent import AgentEndEvent
 
 if isinstance(event, AgentEndEvent):
     print(f"Agent finished. {len(event.messages)} new messages.")
@@ -82,7 +82,7 @@ Emitted at the start of each turn.
 Emitted at the end of a turn. Contains the assistant message and any tool results.
 
 ```python
-from pi_agent import TurnEndEvent
+from pi_llm_agent import TurnEndEvent
 
 if isinstance(event, TurnEndEvent):
     msg = event.message
@@ -98,7 +98,7 @@ These events track the lifecycle of messages being added to the conversation.
 Emitted when a message begins (user messages, assistant messages being streamed, tool results).
 
 ```python
-from pi_agent import AgentMessageStartEvent
+from pi_llm_agent import AgentMessageStartEvent
 
 if isinstance(event, AgentMessageStartEvent):
     msg = event.message
@@ -111,8 +111,8 @@ if isinstance(event, AgentMessageStartEvent):
 Emitted for incremental streaming updates on assistant messages. Contains both the partial agent message and the underlying pi-llm streaming event.
 
 ```python
-from pi_agent import AgentMessageUpdateEvent
-from pi_ai import TextDeltaEvent
+from pi_llm_agent import AgentMessageUpdateEvent
+from pi_llm import TextDeltaEvent
 
 if isinstance(event, AgentMessageUpdateEvent):
     inner = event.assistant_message_event
@@ -127,7 +127,7 @@ This is the primary event for building real-time UIs -- the `assistant_message_e
 Emitted when a message is complete and has been added to the transcript.
 
 ```python
-from pi_agent import AgentMessageEndEvent
+from pi_llm_agent import AgentMessageEndEvent
 
 if isinstance(event, AgentMessageEndEvent):
     msg = event.message
@@ -143,7 +143,7 @@ These events bracket individual tool executions within a turn.
 Emitted when a tool call begins execution.
 
 ```python
-from pi_agent import ToolExecutionStartEvent
+from pi_llm_agent import ToolExecutionStartEvent
 
 if isinstance(event, ToolExecutionStartEvent):
     print(f"Executing: {event.tool_name}(id={event.tool_call_id})")
@@ -155,7 +155,7 @@ if isinstance(event, ToolExecutionStartEvent):
 Emitted when a tool streams a partial result via its `on_update` callback. Useful for long-running tools that report progress.
 
 ```python
-from pi_agent import ToolExecutionUpdateEvent
+from pi_llm_agent import ToolExecutionUpdateEvent
 
 if isinstance(event, ToolExecutionUpdateEvent):
     print(f"[{event.tool_name}] progress: {event.partial_result}")
@@ -166,7 +166,7 @@ if isinstance(event, ToolExecutionUpdateEvent):
 Emitted when a tool call completes.
 
 ```python
-from pi_agent import ToolExecutionEndEvent
+from pi_llm_agent import ToolExecutionEndEvent
 
 if isinstance(event, ToolExecutionEndEvent):
     status = "error" if event.is_error else "success"
@@ -221,14 +221,14 @@ AgentEndEvent
 A common pattern is a function that prints events for debugging:
 
 ```python
-from pi_agent import (
+from pi_llm_agent import (
     AgentStartEvent,
     AgentEndEvent,
     AgentMessageUpdateEvent,
     ToolExecutionStartEvent,
     ToolExecutionEndEvent,
 )
-from pi_ai import TextDeltaEvent
+from pi_llm import TextDeltaEvent
 
 
 def make_event_printer():
@@ -268,7 +268,7 @@ agent.subscribe(make_event_printer())
 All 10 event types are members of the `AgentEvent` union type:
 
 ```python
-from pi_agent import AgentEvent
+from pi_llm_agent import AgentEvent
 ```
 
 You can match on the `type` string or use `isinstance` checks.

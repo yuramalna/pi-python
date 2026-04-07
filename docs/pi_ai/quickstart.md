@@ -15,14 +15,14 @@ The simplest way to get started is `stream_simple`. It returns an async iterable
 ```python
 import asyncio
 
-from pi_ai import (
+from pi_llm import (
     Context,
     SimpleStreamOptions,
     TextDeltaEvent,
     get_model,
     stream_simple,
 )
-from pi_ai.providers import register_builtin_providers
+from pi_llm.providers import register_builtin_providers
 
 # Register the built-in providers (OpenAI, etc.) once at startup
 register_builtin_providers()
@@ -57,13 +57,13 @@ If you do not need real-time streaming, use `complete_simple` to get the finishe
 ```python
 import asyncio
 
-from pi_ai import (
+from pi_llm import (
     Context,
     SimpleStreamOptions,
     complete_simple,
     get_model,
 )
-from pi_ai.providers import register_builtin_providers
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -94,7 +94,7 @@ Add messages to the context to build a multi-turn conversation:
 import asyncio
 import time
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     Context,
     SimpleStreamOptions,
@@ -103,7 +103,7 @@ from pi_ai import (
     complete_simple,
     get_model,
 )
-from pi_ai.providers import register_builtin_providers
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -149,7 +149,7 @@ pi-llm supports tool use. Define a `Tool` with a JSON Schema, then handle `ToolC
 import asyncio
 import time
 
-from pi_ai import (
+from pi_llm import (
     Context,
     DoneEvent,
     SimpleStreamOptions,
@@ -161,7 +161,7 @@ from pi_ai import (
     get_model,
     stream_simple,
 )
-from pi_ai.providers import register_builtin_providers
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -181,7 +181,7 @@ weather_tool = Tool(
 async def main():
     model = get_model("openai", "gpt-4o")
     messages = []
-    from pi_ai import UserMessage
+    from pi_llm import UserMessage
 
     messages.append(
         UserMessage(
@@ -244,7 +244,7 @@ asyncio.run(main())
 Models that support reasoning can be enabled with the `reasoning` option:
 
 ```python
-from pi_ai import SimpleStreamOptions, ThinkingDeltaEvent
+from pi_llm import SimpleStreamOptions, ThinkingDeltaEvent
 
 options = SimpleStreamOptions(reasoning="medium")
 

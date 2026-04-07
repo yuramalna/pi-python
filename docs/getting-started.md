@@ -20,8 +20,8 @@ export OPENAI_API_KEY=sk-...
 
 ```python
 import asyncio
-from pi_ai import get_model, complete_simple, Context, UserMessage
-from pi_ai.providers import register_builtin_providers
+from pi_llm import get_model, complete_simple, Context, UserMessage
+from pi_llm.providers import register_builtin_providers
 
 # Register providers (call once at startup)
 register_builtin_providers()
@@ -42,9 +42,9 @@ asyncio.run(main())
 
 ```python
 import asyncio
-from pi_agent import Agent, AgentOptions, InitialAgentState, AgentTool, AgentToolResult
-from pi_ai import get_model, TextContent, stream_simple
-from pi_ai.providers import register_builtin_providers
+from pi_llm_agent import Agent, AgentOptions, InitialAgentState, AgentTool, AgentToolResult
+from pi_llm import get_model, TextContent, stream_simple
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 

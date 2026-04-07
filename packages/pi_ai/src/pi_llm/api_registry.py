@@ -9,8 +9,8 @@ from __future__ import annotations
 from collections.abc import Callable
 from dataclasses import dataclass
 
-from pi_ai.types import Context, Model, SimpleStreamOptions, StreamOptions
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.types import Context, Model, SimpleStreamOptions, StreamOptions
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 StreamFn = Callable[[Model, Context, StreamOptions | None], AssistantMessageEventStream]
 StreamSimpleFn = Callable[[Model, Context, SimpleStreamOptions | None], AssistantMessageEventStream]

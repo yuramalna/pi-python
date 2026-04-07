@@ -2,7 +2,7 @@
 
 from pydantic import BaseModel, TypeAdapter
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     DoneEvent,
     ErrorEvent,

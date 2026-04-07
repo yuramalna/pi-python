@@ -8,17 +8,17 @@ import time
 
 import pytest
 
-from pi_agent import (
+from pi_llm_agent import (
     AgentTool,
 )
-from pi_agent.agent import (
+from pi_llm_agent.agent import (
     Agent,
     AgentOptions,
     InitialAgentState,
     PendingMessageQueue,
 )
-from pi_ai.models import get_model
-from pi_ai.types import (
+from pi_llm.models import get_model
+from pi_llm.types import (
     AssistantMessage,
     DoneEvent,
     ErrorEvent,
@@ -27,7 +27,7 @@ from pi_ai.types import (
     Usage,
     UserMessage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 # ---------------------------------------------------------------------------
 # Helpers

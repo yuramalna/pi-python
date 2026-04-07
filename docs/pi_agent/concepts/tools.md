@@ -7,8 +7,8 @@ In pi-llm-agent, tools are implemented as `AgentTool` subclasses. Each tool has 
 Subclass `AgentTool` and implement `execute()`:
 
 ```python
-from pi_agent import AgentTool, AgentToolResult
-from pi_ai import TextContent
+from pi_llm_agent import AgentTool, AgentToolResult
+from pi_llm import TextContent
 
 
 class WeatherTool(AgentTool):
@@ -70,8 +70,8 @@ async def execute(
 For simple tools, use the factory method:
 
 ```python
-from pi_agent import AgentTool, AgentToolResult
-from pi_ai import TextContent
+from pi_llm_agent import AgentTool, AgentToolResult
+from pi_llm import TextContent
 
 
 async def calculate(tool_call_id, params, cancellation=None, on_update=None):
@@ -105,8 +105,8 @@ calc_tool = AgentTool.from_function(
 The result returned by `execute()`:
 
 ```python
-from pi_agent import AgentToolResult
-from pi_ai import TextContent, ImageContent
+from pi_llm_agent import AgentToolResult
+from pi_llm import TextContent, ImageContent
 
 # Text result
 result = AgentToolResult(

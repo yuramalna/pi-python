@@ -10,15 +10,15 @@ import time
 
 import pytest
 
-from pi_agent import (
+from pi_llm_agent import (
     Agent,
     AgentOptions,
     AgentTool,
     AgentToolResult,
     InitialAgentState,
 )
-from pi_ai import TextContent, ThinkingContent, ToolCall, UserMessage, stream_simple
-from pi_ai.providers.faux import (
+from pi_llm import TextContent, ThinkingContent, ToolCall, UserMessage, stream_simple
+from pi_llm.providers.faux import (
     FauxModelDefinition,
     RegisterFauxProviderOptions,
     faux_assistant_message,
@@ -349,7 +349,7 @@ class TestContinue:
 
     @pytest.mark.asyncio
     async def test_continues_from_tool_result(self):
-        from pi_ai import AssistantMessage, ToolResultMessage, Usage
+        from pi_llm import AssistantMessage, ToolResultMessage, Usage
 
         faux = _faux()
         model = faux.get_model()

@@ -26,8 +26,8 @@ You will need API keys for:
 
 ```python
 import httpx
-from pi_agent import AgentTool, AgentToolResult
-from pi_ai import TextContent
+from pi_llm_agent import AgentTool, AgentToolResult
+from pi_llm import TextContent
 
 
 class WebSearchTool(AgentTool):
@@ -118,14 +118,14 @@ class NoteTool(AgentTool):
 Build a subscriber that shows the agent's activity in real time:
 
 ```python
-from pi_agent import (
+from pi_llm_agent import (
     AgentStartEvent,
     AgentEndEvent,
     AgentMessageUpdateEvent,
     ToolExecutionStartEvent,
     ToolExecutionEndEvent,
 )
-from pi_ai import TextDeltaEvent, ThinkingDeltaEvent
+from pi_llm import TextDeltaEvent, ThinkingDeltaEvent
 
 
 def make_event_printer():
@@ -165,9 +165,9 @@ def make_event_printer():
 import asyncio
 import os
 
-from pi_agent import Agent, AgentOptions, InitialAgentState
-from pi_ai import get_model
-from pi_ai.providers import register_builtin_providers
+from pi_llm_agent import Agent, AgentOptions, InitialAgentState
+from pi_llm import get_model
+from pi_llm.providers import register_builtin_providers
 
 
 async def run_research(topic: str):
@@ -245,7 +245,7 @@ Redirect the agent mid-research:
 
 ```python
 import time
-from pi_ai import UserMessage
+from pi_llm import UserMessage
 
 async def run_with_steering(topic: str):
     # ... create agent as above ...

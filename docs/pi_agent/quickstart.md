@@ -18,15 +18,15 @@ An `Agent` manages the multi-turn loop: it sends a prompt to the LLM, executes a
 import asyncio
 import os
 
-from pi_agent import (
+from pi_llm_agent import (
     Agent,
     AgentOptions,
     AgentTool,
     AgentToolResult,
     InitialAgentState,
 )
-from pi_ai import TextContent, get_model, stream_simple
-from pi_ai.providers import register_builtin_providers
+from pi_llm import TextContent, get_model, stream_simple
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -117,8 +117,8 @@ print(f"Model: {agent.state.model.id}")
 For tools that do not need a class, use the factory method:
 
 ```python
-from pi_agent import AgentTool, AgentToolResult
-from pi_ai import TextContent
+from pi_llm_agent import AgentTool, AgentToolResult
+from pi_llm import TextContent
 
 
 async def reverse_text(tool_call_id, params, cancellation=None, on_update=None):

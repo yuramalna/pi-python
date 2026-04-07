@@ -2,7 +2,7 @@
 
 import asyncio
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     AssistantMessageEventStream,
     DoneEvent,

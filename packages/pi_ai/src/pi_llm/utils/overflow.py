@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import re
 
-from pi_ai.types import AssistantMessage
+from pi_llm.types import AssistantMessage
 
 # Regex patterns to detect context overflow errors from different providers.
 _OVERFLOW_PATTERNS: list[re.Pattern[str]] = [

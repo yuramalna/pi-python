@@ -13,9 +13,18 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any
 
-from pi_agent.agent_loop import run_agent_loop, run_agent_loop_continue
-from pi_agent.cancellation import CancellationToken
-from pi_agent.types import (
+from pi_llm.stream import stream_simple
+from pi_llm.types import (
+    AssistantMessage,
+    ImageContent,
+    Model,
+    TextContent,
+    Usage,
+    UserMessage,
+)
+from pi_llm_agent.agent_loop import run_agent_loop, run_agent_loop_continue
+from pi_llm_agent.cancellation import CancellationToken
+from pi_llm_agent.types import (
     AfterToolCallHook,
     AgentContext,
     AgentEndEvent,
@@ -33,15 +42,6 @@ from pi_agent.types import (
     ToolExecutionMode,
     ToolExecutionStartEvent,
     TurnEndEvent,
-)
-from pi_ai.stream import stream_simple
-from pi_ai.types import (
-    AssistantMessage,
-    ImageContent,
-    Model,
-    TextContent,
-    Usage,
-    UserMessage,
 )
 
 # ---------------------------------------------------------------------------

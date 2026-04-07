@@ -1,6 +1,6 @@
 """pi_agent — General-purpose agent framework."""
 
-from pi_agent.agent import (
+from pi_llm_agent.agent import (
     DEFAULT_MODEL,
     Agent,
     AgentOptions,
@@ -9,14 +9,14 @@ from pi_agent.agent import (
     PendingMessageQueue,
     default_convert_to_llm,
 )
-from pi_agent.agent_loop import (
+from pi_llm_agent.agent_loop import (
     agent_loop,
     agent_loop_continue,
     run_agent_loop,
     run_agent_loop_continue,
 )
-from pi_agent.cancellation import CancellationToken
-from pi_agent.types import (
+from pi_llm_agent.cancellation import CancellationToken
+from pi_llm_agent.types import (
     AfterToolCallContext,
     AfterToolCallHook,
     AfterToolCallResult,
@@ -47,7 +47,7 @@ from pi_agent.types import (
     TurnEndEvent,
     TurnStartEvent,
 )
-from pi_agent.validation import validate_agent_tool_arguments
+from pi_llm_agent.validation import validate_agent_tool_arguments
 
 __all__ = [
     # Agent class

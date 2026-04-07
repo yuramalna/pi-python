@@ -4,9 +4,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from pi_agent.types import AgentTool
-from pi_ai.types import ToolCall
-from pi_ai.utils.validation import validate_tool_arguments
+from pi_llm.types import ToolCall
+from pi_llm.utils.validation import validate_tool_arguments
+from pi_llm_agent.types import AgentTool
 
 
 def validate_agent_tool_arguments(tool: AgentTool, tool_call: ToolCall) -> Any:

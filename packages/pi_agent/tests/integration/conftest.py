@@ -8,7 +8,7 @@ import os
 
 import pytest
 
-from pi_ai.providers.register_builtins import register_builtin_providers
+from pi_llm.providers.register_builtins import register_builtin_providers
 
 
 def pytest_collection_modifyitems(config, items):

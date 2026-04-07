@@ -5,9 +5,9 @@ Requires OPENAI_API_KEY environment variable.
 
 import pytest
 
-from pi_ai.models import get_model
-from pi_ai.stream import complete_simple, stream_simple
-from pi_ai.types import (
+from pi_llm.models import get_model
+from pi_llm.stream import complete_simple, stream_simple
+from pi_llm.types import (
     Context,
     SimpleStreamOptions,
     Tool,

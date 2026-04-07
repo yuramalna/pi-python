@@ -67,7 +67,7 @@ class ErrorEvent:
 Text events track the incremental construction of a `TextContent` block.
 
 ```python
-from pi_ai import TextDeltaEvent, TextEndEvent
+from pi_llm import TextDeltaEvent, TextEndEvent
 
 async for event in event_stream:
     if isinstance(event, TextDeltaEvent):
@@ -95,7 +95,7 @@ Contains the complete `content` string for this block.
 Thinking events mirror text events but track `ThinkingContent` blocks. They only appear when reasoning is enabled.
 
 ```python
-from pi_ai import ThinkingDeltaEvent, SimpleStreamOptions
+from pi_llm import ThinkingDeltaEvent, SimpleStreamOptions
 
 options = SimpleStreamOptions(reasoning="medium")
 event_stream = stream_simple(model, context, options)
@@ -114,7 +114,7 @@ Same structure as the text family: `content_index`, `delta` (for the delta event
 Tool call events track the incremental construction of a `ToolCall` block. The arguments are streamed as JSON string chunks.
 
 ```python
-from pi_ai import ToolCallStartEvent, ToolCallDeltaEvent, ToolCallEndEvent
+from pi_llm import ToolCallStartEvent, ToolCallDeltaEvent, ToolCallEndEvent
 
 async for event in event_stream:
     if isinstance(event, ToolCallStartEvent):
@@ -168,7 +168,7 @@ Multiple content blocks can appear in a single response. For example, the model 
 All 12 event types are members of the `AssistantMessageEvent` union:
 
 ```python
-from pi_ai import AssistantMessageEvent
+from pi_llm import AssistantMessageEvent
 
 # Type-safe matching with isinstance:
 async for event in event_stream:

@@ -28,8 +28,8 @@ pip install pi-llm
 
 ```python
 import asyncio
-from pi_ai import get_model, stream_simple, complete_simple, Context, UserMessage
-from pi_ai import register_builtin_providers, SimpleStreamOptions
+from pi_llm import get_model, stream_simple, complete_simple, Context, UserMessage
+from pi_llm import register_builtin_providers, SimpleStreamOptions
 
 # Register providers (call once at startup)
 register_builtin_providers()
@@ -73,7 +73,7 @@ asyncio.run(main_stream())
 Define tools with JSON Schema and handle tool calls in a loop:
 
 ```python
-from pi_ai import Tool, ToolCall, ToolResultMessage, TextContent
+from pi_llm import Tool, ToolCall, ToolResultMessage, TextContent
 import time
 
 weather_tool = Tool(

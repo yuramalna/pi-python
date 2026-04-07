@@ -9,7 +9,7 @@ Models that support image input (those with `"image"` in `model.input_types`) ca
 ## Creating an ImageContent block
 
 ```python
-from pi_ai import ImageContent
+from pi_llm import ImageContent
 
 image = ImageContent(
     data="<base64-encoded image data>",
@@ -20,7 +20,7 @@ image = ImageContent(
 ## Including images in a UserMessage
 
 ```python
-from pi_ai import UserMessage, TextContent, ImageContent
+from pi_llm import UserMessage, TextContent, ImageContent
 
 message = UserMessage(
     content=[

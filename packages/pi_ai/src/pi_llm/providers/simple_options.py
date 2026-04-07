@@ -6,7 +6,7 @@ level clamping, and adjusts token budgets for thinking-enabled models.
 
 from __future__ import annotations
 
-from pi_ai.types import Model, SimpleStreamOptions, StreamOptions, ThinkingLevel
+from pi_llm.types import Model, SimpleStreamOptions, StreamOptions, ThinkingLevel
 
 
 def build_base_options(

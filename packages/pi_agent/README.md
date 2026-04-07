@@ -24,9 +24,9 @@ Requires `pi-llm` (installed automatically as a dependency).
 
 ```python
 import asyncio
-from pi_agent import Agent, AgentOptions, InitialAgentState, AgentTool, AgentToolResult
-from pi_ai import get_model, TextContent, stream_simple
-from pi_ai.providers import register_builtin_providers
+from pi_llm_agent import Agent, AgentOptions, InitialAgentState, AgentTool, AgentToolResult
+from pi_llm import get_model, TextContent, stream_simple
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -191,7 +191,7 @@ async def my_after_hook(context, cancellation):
 For direct control without the Agent class:
 
 ```python
-from pi_agent import agent_loop, AgentContext, AgentLoopConfig
+from pi_llm_agent import agent_loop, AgentContext, AgentLoopConfig
 
 context = AgentContext(
     system_prompt="You are helpful.",

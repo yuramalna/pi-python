@@ -1,8 +1,8 @@
 """Tests for cross-provider message transformation."""
 
 
-from pi_ai.providers.transform_messages import transform_messages
-from pi_ai.types import (
+from pi_llm.providers.transform_messages import transform_messages
+from pi_llm.types import (
     AssistantMessage,
     Model,
     TextContent,

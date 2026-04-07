@@ -8,8 +8,8 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from pi_ai.model_pricing import KNOWN_METADATA, KNOWN_PRICING
-from pi_ai.types import CostBreakdown, Model, Usage
+from pi_llm.model_pricing import KNOWN_METADATA, KNOWN_PRICING
+from pi_llm.types import CostBreakdown, Model, Usage
 
 
 def get_model(provider: str, model_id: str, **overrides: Any) -> Model:

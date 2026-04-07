@@ -5,17 +5,17 @@ Requires OPENAI_API_KEY environment variable.
 
 import pytest
 
-from pi_agent import (
+from pi_llm_agent import (
     AgentEndEvent,
     AgentTool,
     AgentToolResult,
     ToolExecutionEndEvent,
     ToolExecutionStartEvent,
 )
-from pi_agent.agent import Agent, AgentOptions, InitialAgentState
-from pi_ai.models import get_model
-from pi_ai.stream import stream_simple
-from pi_ai.types import TextContent
+from pi_llm_agent.agent import Agent, AgentOptions, InitialAgentState
+from pi_llm.models import get_model
+from pi_llm.stream import stream_simple
+from pi_llm.types import TextContent
 
 MODEL_ID = "gpt-5.4-2026-03-05"
 

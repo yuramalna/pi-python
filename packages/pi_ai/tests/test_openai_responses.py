@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import pytest
 
-from pi_ai.providers.openai_responses import (
+from pi_llm.providers.openai_responses import (
     OpenAIResponsesOptions,
     _apply_service_tier_pricing,
     _build_params,
@@ -13,7 +13,7 @@ from pi_ai.providers.openai_responses import (
     _resolve_cache_retention,
     stream_simple_openai_responses,
 )
-from pi_ai.types import Context, Model, SimpleStreamOptions, Usage, UserMessage
+from pi_llm.types import Context, Model, SimpleStreamOptions, Usage, UserMessage
 
 
 def _model(*, id="gpt-4o", provider="openai", reasoning=False):

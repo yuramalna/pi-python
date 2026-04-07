@@ -7,15 +7,15 @@ Use ``stream`` / ``complete`` when you need provider-specific options.
 
 from __future__ import annotations
 
-from pi_ai.api_registry import get_api_provider
-from pi_ai.types import (
+from pi_llm.api_registry import get_api_provider
+from pi_llm.types import (
     AssistantMessage,
     Context,
     Model,
     SimpleStreamOptions,
     StreamOptions,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 
 def _resolve_api_provider(api: str):

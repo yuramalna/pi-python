@@ -2,7 +2,7 @@
 
 import pytest
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     Tool,
     ToolCall,

@@ -16,8 +16,8 @@ pi-llm provides four top-level functions for making LLM calls. Two are "simple" 
 The recommended entry point. Accepts `SimpleStreamOptions` which includes reasoning level support.
 
 ```python
-from pi_ai import Context, SimpleStreamOptions, get_model, stream_simple
-from pi_ai.providers import register_builtin_providers
+from pi_llm import Context, SimpleStreamOptions, get_model, stream_simple
+from pi_llm.providers import register_builtin_providers
 
 register_builtin_providers()
 
@@ -33,7 +33,7 @@ event_stream = stream_simple(model, context, options)
 A convenience wrapper that internally calls `stream_simple` and awaits the final result:
 
 ```python
-from pi_ai import Context, SimpleStreamOptions, complete_simple, get_model
+from pi_llm import Context, SimpleStreamOptions, complete_simple, get_model
 
 message = await complete_simple(model, context, SimpleStreamOptions())
 print(message.content[0].text)
@@ -44,7 +44,7 @@ print(message.content[0].text)
 The lower-level pair. These accept `StreamOptions` (without reasoning level) and are useful when you need to pass provider-specific options like `cache_retention` or `session_id` without the reasoning abstraction.
 
 ```python
-from pi_ai import Context, StreamOptions, get_model, stream
+from pi_llm import Context, StreamOptions, get_model, stream
 
 options = StreamOptions(
     temperature=0.7,
@@ -64,7 +64,7 @@ All streaming functions return an `AssistantMessageEventStream`, which is a spec
 Consume events as they arrive:
 
 ```python
-from pi_ai import TextDeltaEvent, DoneEvent, ErrorEvent
+from pi_llm import TextDeltaEvent, DoneEvent, ErrorEvent
 
 event_stream = stream_simple(model, context, SimpleStreamOptions())
 
@@ -97,7 +97,7 @@ for block in message.content:
 The `EventStream` is push-based. Providers use `push()` and `end()` to emit events:
 
 ```python
-from pi_ai import AssistantMessageEventStream
+from pi_llm import AssistantMessageEventStream
 
 # This is what providers do internally:
 event_stream = AssistantMessageEventStream()

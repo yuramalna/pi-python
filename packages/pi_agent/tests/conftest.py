@@ -3,14 +3,14 @@
 import asyncio
 import time
 
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     DoneEvent,
     Model,
     TextContent,
     Usage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 
 def make_mock_model(model_id: str = "mock") -> Model:

@@ -7,8 +7,8 @@ The `Agent` class is the primary public API for pi-llm-agent. It wraps the low-l
 An agent is created with `AgentOptions`, which configures its initial state and behavior:
 
 ```python
-from pi_agent import Agent, AgentOptions, InitialAgentState
-from pi_ai import get_model
+from pi_llm_agent import Agent, AgentOptions, InitialAgentState
+from pi_llm import get_model
 
 agent = Agent(AgentOptions(
     initial_state=InitialAgentState(
@@ -84,7 +84,7 @@ Send a prompt to the agent. Accepts a string, a message object, or a list of mes
 await agent.prompt("Hello!")
 
 # With images
-from pi_ai import ImageContent
+from pi_llm import ImageContent
 await agent.prompt("Describe this image.", images=[image_content])
 
 # Raw message or list of messages

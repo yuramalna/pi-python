@@ -1,15 +1,15 @@
 """pi_ai.providers — Provider implementations and helpers."""
 
-from pi_ai.providers.openai_responses import (
+from pi_llm.providers.openai_responses import (
     OpenAIResponsesOptions,
     stream_openai_responses,
     stream_simple_openai_responses,
 )
-from pi_ai.providers.register_builtins import (
+from pi_llm.providers.register_builtins import (
     register_builtin_providers,
     reset_api_providers,
 )
-from pi_ai.providers.simple_options import (
+from pi_llm.providers.simple_options import (
     adjust_max_tokens_for_thinking,
     build_base_options,
     clamp_reasoning,

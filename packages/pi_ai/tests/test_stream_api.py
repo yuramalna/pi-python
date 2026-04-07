@@ -2,10 +2,10 @@
 
 import pytest
 
-from pi_ai.api_registry import clear_api_providers, register_api_provider
-from pi_ai.stream import _resolve_api_provider, stream, stream_simple
-from pi_ai.types import Context, Model, UserMessage
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.api_registry import clear_api_providers, register_api_provider
+from pi_llm.stream import _resolve_api_provider, stream, stream_simple
+from pi_llm.types import Context, Model, UserMessage
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 
 @pytest.fixture(autouse=True)

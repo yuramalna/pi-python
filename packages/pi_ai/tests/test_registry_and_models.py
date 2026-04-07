@@ -2,7 +2,7 @@
 
 import pytest
 
-from pi_ai import (
+from pi_llm import (
     Context,
     SimpleStreamOptions,
     Usage,
@@ -21,7 +21,7 @@ from pi_ai import (
     supports_xhigh,
     unregister_api_providers,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 # -- Fixtures --
 

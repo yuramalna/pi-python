@@ -7,7 +7,7 @@ Tools enable LLMs to interact with external systems by calling named functions w
 The `Tool` class takes three fields:
 
 ```python
-from pi_ai import Tool
+from pi_llm import Tool
 
 weather_tool = Tool(
     name="get_weather",
@@ -40,7 +40,7 @@ If you already have a Pydantic model for your tool's parameters, use `Tool.from_
 
 ```python
 from pydantic import BaseModel, Field
-from pi_ai import Tool
+from pi_llm import Tool
 
 
 class WeatherParams(BaseModel):
@@ -64,7 +64,7 @@ weather_tool = Tool.from_pydantic(
 Pass tools in the `Context` to make them available to the LLM:
 
 ```python
-from pi_ai import Context
+from pi_llm import Context
 
 context = Context(
     system_prompt="Use the available tools to help the user.",
@@ -80,7 +80,7 @@ The LLM will decide whether to call a tool based on the user's request and the t
 When the LLM decides to call a tool, the event stream emits `ToolCallStartEvent`, zero or more `ToolCallDeltaEvent`s, and finally `ToolCallEndEvent` with the parsed arguments.
 
 ```python
-from pi_ai import (
+from pi_llm import (
     ToolCallEndEvent,
     ToolResultMessage,
     TextContent,
@@ -107,7 +107,7 @@ After executing the tool, send back a `ToolResultMessage` to continue the conver
 
 ```python
 import time
-from pi_ai import ToolResultMessage, TextContent
+from pi_llm import ToolResultMessage, TextContent
 
 result = ToolResultMessage(
     tool_call_id=tc.id,       # Must match the ToolCall.id
@@ -151,7 +151,7 @@ The `ToolCall` object returned in `ToolCallEndEvent.tool_call` has these fields:
 pi-llm provides utilities to validate tool call arguments against the schema:
 
 ```python
-from pi_ai import validate_tool_call, validate_tool_arguments
+from pi_llm import validate_tool_call, validate_tool_arguments
 
 # Validate a ToolCall against a list of Tools
 errors = validate_tool_call(tool_call, [weather_tool])

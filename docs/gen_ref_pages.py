@@ -1,7 +1,7 @@
 """Generate API reference pages for mkdocstrings.
 
 This script is run by mkdocs-gen-files during the docs build.
-It walks the pi_ai and pi_agent source trees and generates one
+It walks the pi_llm and pi_llm_agent source trees and generates one
 reference page per public module.
 """
 
@@ -11,24 +11,24 @@ import mkdocs_gen_files
 
 PACKAGES = [
     {
-        "name": "pi_ai",
-        "src": Path("packages/pi_ai/src/pi_ai"),
+        "name": "pi_llm",
+        "src": Path("packages/pi_ai/src/pi_llm"),
         "doc_prefix": "pi_ai/reference",
     },
     {
-        "name": "pi_agent",
-        "src": Path("packages/pi_agent/src/pi_agent"),
+        "name": "pi_llm_agent",
+        "src": Path("packages/pi_agent/src/pi_llm_agent"),
         "doc_prefix": "pi_agent/reference",
     },
 ]
 
 # Modules to skip (internal implementation details)
 SKIP_MODULES = {
-    "pi_ai.providers.openai_responses_shared",
-    "pi_ai.providers.transform_messages",
-    "pi_ai.utils.hash",
-    "pi_ai.utils.json_parse",
-    "pi_ai.utils.sanitize_unicode",
+    "pi_llm.providers.openai_responses_shared",
+    "pi_llm.providers.transform_messages",
+    "pi_llm.utils.hash",
+    "pi_llm.utils.json_parse",
+    "pi_llm.utils.sanitize_unicode",
 }
 
 # Collect entries for index pages

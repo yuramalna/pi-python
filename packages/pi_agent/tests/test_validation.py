@@ -2,8 +2,8 @@
 
 import pytest
 
-from pi_agent import AgentTool, validate_agent_tool_arguments
-from pi_ai.types import ToolCall
+from pi_llm_agent import AgentTool, validate_agent_tool_arguments
+from pi_llm.types import ToolCall
 
 
 def _tool():

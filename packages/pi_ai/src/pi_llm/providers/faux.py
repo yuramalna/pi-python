@@ -16,8 +16,8 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
-from pi_ai.api_registry import register_api_provider, unregister_api_providers
-from pi_ai.types import (
+from pi_llm.api_registry import register_api_provider, unregister_api_providers
+from pi_llm.types import (
     AssistantMessage,
     Context,
     CostBreakdown,
@@ -44,7 +44,7 @@ from pi_ai.types import (
     ToolCallStartEvent,
     Usage,
 )
-from pi_ai.utils.event_stream import (
+from pi_llm.utils.event_stream import (
     AssistantMessageEventStream,
     create_assistant_message_event_stream,
 )

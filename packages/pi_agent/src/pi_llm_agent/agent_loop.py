@@ -11,8 +11,18 @@ import time
 from dataclasses import dataclass
 from typing import Any
 
-from pi_agent.cancellation import CancellationToken
-from pi_agent.types import (
+from pi_llm.stream import stream_simple
+from pi_llm.types import (
+    AssistantMessage,
+    Context,
+    SimpleStreamOptions,
+    TextContent,
+    ToolCall,
+    ToolResultMessage,
+)
+from pi_llm.utils.event_stream import EventStream
+from pi_llm_agent.cancellation import CancellationToken
+from pi_llm_agent.types import (
     AfterToolCallContext,
     AgentContext,
     AgentEndEvent,
@@ -33,17 +43,7 @@ from pi_agent.types import (
     TurnEndEvent,
     TurnStartEvent,
 )
-from pi_agent.validation import validate_agent_tool_arguments
-from pi_ai.stream import stream_simple
-from pi_ai.types import (
-    AssistantMessage,
-    Context,
-    SimpleStreamOptions,
-    TextContent,
-    ToolCall,
-    ToolResultMessage,
-)
-from pi_ai.utils.event_stream import EventStream
+from pi_llm_agent.validation import validate_agent_tool_arguments
 
 # ---------------------------------------------------------------------------
 # Internal types (not exported)

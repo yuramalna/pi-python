@@ -10,7 +10,7 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass, field
 from typing import TYPE_CHECKING, Any, Literal, Union
 
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     AssistantMessageEvent,
     ImageContent,
@@ -22,8 +22,8 @@ from pi_ai.types import (
 )
 
 if TYPE_CHECKING:
-    from pi_agent.cancellation import CancellationToken
-    from pi_ai.utils.event_stream import AssistantMessageEventStream
+    from pi_llm.utils.event_stream import AssistantMessageEventStream
+    from pi_llm_agent.cancellation import CancellationToken
 
 # ---------------------------------------------------------------------------
 # Type aliases

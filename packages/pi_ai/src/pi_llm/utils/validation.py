@@ -11,7 +11,7 @@ from typing import Any
 
 import jsonschema
 
-from pi_ai.types import Tool, ToolCall
+from pi_llm.types import Tool, ToolCall
 
 
 def validate_tool_call(tools: list[Tool], tool_call: ToolCall) -> Any:

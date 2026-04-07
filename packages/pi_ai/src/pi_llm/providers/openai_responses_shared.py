@@ -8,9 +8,9 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
 
-from pi_ai.models import calculate_cost
-from pi_ai.providers.transform_messages import transform_messages
-from pi_ai.types import (
+from pi_llm.models import calculate_cost
+from pi_llm.providers.transform_messages import transform_messages
+from pi_llm.types import (
     AssistantMessage,
     Context,
     Model,
@@ -30,10 +30,10 @@ from pi_ai.types import (
     ToolCallStartEvent,
     Usage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
-from pi_ai.utils.hash import short_hash
-from pi_ai.utils.json_parse import parse_streaming_json
-from pi_ai.utils.sanitize_unicode import sanitize_surrogates
+from pi_llm.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.hash import short_hash
+from pi_llm.utils.json_parse import parse_streaming_json
+from pi_llm.utils.sanitize_unicode import sanitize_surrogates
 
 # =============================================================================
 # Utilities

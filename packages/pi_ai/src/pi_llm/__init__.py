@@ -1,21 +1,21 @@
 """pi_ai — Unified LLM provider abstraction."""
 
-from pi_ai.api_registry import (
+from pi_llm.api_registry import (
     clear_api_providers,
     get_api_provider,
     get_api_providers,
     register_api_provider,
     unregister_api_providers,
 )
-from pi_ai.env_api_keys import get_env_api_key
-from pi_ai.models import (
+from pi_llm.env_api_keys import get_env_api_key
+from pi_llm.models import (
     calculate_cost,
     fetch_models,
     get_model,
     models_are_equal,
     supports_xhigh,
 )
-from pi_ai.providers import (
+from pi_llm.providers import (
     OpenAIResponsesOptions,
     adjust_max_tokens_for_thinking,
     build_base_options,
@@ -25,20 +25,20 @@ from pi_ai.providers import (
     stream_openai_responses,
     stream_simple_openai_responses,
 )
-from pi_ai.providers.faux import (
+from pi_llm.providers.faux import (
     faux_assistant_message,
     faux_text,
     faux_thinking,
     faux_tool_call,
     register_faux_provider,
 )
-from pi_ai.stream import (
+from pi_llm.stream import (
     complete,
     complete_simple,
     stream,
     stream_simple,
 )
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantContentItem,
     AssistantMessage,
     AssistantMessageEvent,
@@ -76,7 +76,7 @@ from pi_ai.types import (
     UserContentItem,
     UserMessage,
 )
-from pi_ai.utils import (
+from pi_llm.utils import (
     AssistantMessageEventStream,
     EventStream,
     create_assistant_message_event_stream,

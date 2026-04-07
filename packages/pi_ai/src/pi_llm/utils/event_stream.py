@@ -10,7 +10,7 @@ import asyncio
 from collections.abc import AsyncIterator, Callable
 from typing import Generic, TypeVar
 
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     AssistantMessageEvent,
     DoneEvent,

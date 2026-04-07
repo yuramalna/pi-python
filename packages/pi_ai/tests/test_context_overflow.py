@@ -2,7 +2,7 @@
 
 import pytest
 
-from pi_ai import AssistantMessage, Usage, is_context_overflow
+from pi_llm import AssistantMessage, Usage, is_context_overflow
 
 
 def _error_msg(error_message: str) -> AssistantMessage:

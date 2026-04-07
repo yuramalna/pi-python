@@ -4,7 +4,7 @@ Sourced from the TypeScript model catalog (models.generated.ts).
 All models listed here use the ``openai-responses`` API via the ``openai`` provider.
 """
 
-from pi_ai.types import ModelCost
+from pi_llm.types import ModelCost
 
 # $/million tokens
 KNOWN_PRICING: dict[str, ModelCost] = {

@@ -2,7 +2,7 @@
 
 import asyncio
 
-from pi_agent import CancellationToken
+from pi_llm_agent import CancellationToken
 
 
 def test_initial_state():

@@ -2,7 +2,7 @@
 
 import pytest
 
-from pi_agent import (
+from pi_llm_agent import (
     AfterToolCallContext,
     AfterToolCallResult,
     AgentContext,
@@ -22,7 +22,7 @@ from pi_agent import (
     TurnEndEvent,
     TurnStartEvent,
 )
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     TextContent,
     Tool,
@@ -156,7 +156,7 @@ def test_after_tool_call_context_construction():
 
 
 def test_agent_loop_config_defaults():
-    from pi_ai.types import Model
+    from pi_llm.types import Model
 
     model = Model(id="gpt-4o", name="gpt-4o", api="openai-responses", provider="openai")
     config = AgentLoopConfig(model=model, convert_to_llm=lambda m: m)
@@ -198,7 +198,7 @@ def test_message_start_event():
 
 
 def test_message_update_event():
-    from pi_ai.types import StartEvent
+    from pi_llm.types import StartEvent
     e = AgentMessageUpdateEvent(
         message="hello",
         assistant_message_event=StartEvent(partial=AssistantMessage(timestamp=0)),

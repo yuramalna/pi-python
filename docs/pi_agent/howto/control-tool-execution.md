@@ -11,7 +11,7 @@ By default, when the LLM requests multiple tool calls in a single response, pi-l
 Set the mode in `AgentOptions`:
 
 ```python
-from pi_agent import AgentOptions
+from pi_llm_agent import AgentOptions
 
 # Parallel (default) -- all tool calls run concurrently
 options = AgentOptions(tool_execution="parallel")
@@ -25,7 +25,7 @@ options = AgentOptions(tool_execution="sequential")
 Hooks intercept tool calls before and after execution:
 
 ```python
-from pi_agent import BeforeToolCallResult
+from pi_llm_agent import BeforeToolCallResult
 
 async def before_hook(context, cancellation):
     print(f"About to call: {context.tool_call.name}")

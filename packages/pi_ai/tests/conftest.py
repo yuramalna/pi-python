@@ -2,8 +2,8 @@
 
 import pytest
 
-from pi_ai.api_registry import clear_api_providers
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.api_registry import clear_api_providers
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 
 @pytest.fixture()

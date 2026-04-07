@@ -6,7 +6,7 @@ import math
 
 import pytest
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     AssistantMessageEvent,
     Context,
@@ -20,7 +20,7 @@ from pi_ai import (
     complete,
     stream,
 )
-from pi_ai.providers.faux import (
+from pi_llm.providers.faux import (
     FauxModelDefinition,
     RegisterFauxProviderOptions,
     faux_assistant_message,

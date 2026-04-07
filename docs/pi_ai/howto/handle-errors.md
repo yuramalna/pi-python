@@ -15,7 +15,7 @@ Errors in pi-llm surface through three mechanisms:
 When an error occurs during streaming, the event stream emits an `ErrorEvent` instead of a `DoneEvent`:
 
 ```python
-from pi_ai import ErrorEvent
+from pi_llm import ErrorEvent
 
 async for event in event_stream:
     if isinstance(event, ErrorEvent):

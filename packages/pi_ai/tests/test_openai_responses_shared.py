@@ -5,7 +5,7 @@ from types import SimpleNamespace
 
 import pytest
 
-from pi_ai.providers.openai_responses_shared import (
+from pi_llm.providers.openai_responses_shared import (
     _build_foreign_responses_item_id,
     _normalize_id_part,
     convert_responses_messages,
@@ -15,7 +15,7 @@ from pi_ai.providers.openai_responses_shared import (
     parse_text_signature,
     process_responses_stream,
 )
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     Context,
     ImageContent,
@@ -27,7 +27,7 @@ from pi_ai.types import (
     ToolResultMessage,
     UserMessage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 
 def _model(*, id="gpt-4o", provider="openai", api="openai-responses", reasoning=False):

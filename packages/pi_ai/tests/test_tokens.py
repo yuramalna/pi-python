@@ -2,7 +2,7 @@
 
 import pytest
 
-from pi_ai import (
+from pi_llm import (
     CostBreakdown,
     Model,
     ModelCost,
@@ -12,7 +12,7 @@ from pi_ai import (
     models_are_equal,
     supports_xhigh,
 )
-from pi_ai.model_pricing import KNOWN_METADATA, KNOWN_PRICING
+from pi_llm.model_pricing import KNOWN_METADATA, KNOWN_PRICING
 
 
 class TestCalculateCost:

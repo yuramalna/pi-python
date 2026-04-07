@@ -12,16 +12,16 @@ from dataclasses import dataclass
 
 from openai import AsyncOpenAI
 
-from pi_ai.env_api_keys import get_env_api_key
-from pi_ai.models import supports_xhigh
-from pi_ai.providers.openai_responses_shared import (
+from pi_llm.env_api_keys import get_env_api_key
+from pi_llm.models import supports_xhigh
+from pi_llm.providers.openai_responses_shared import (
     OpenAIResponsesStreamOptions,
     convert_responses_messages,
     convert_responses_tools,
     process_responses_stream,
 )
-from pi_ai.providers.simple_options import build_base_options, clamp_reasoning
-from pi_ai.types import (
+from pi_llm.providers.simple_options import build_base_options, clamp_reasoning
+from pi_llm.types import (
     AssistantMessage,
     CacheRetention,
     Context,
@@ -33,7 +33,7 @@ from pi_ai.types import (
     StreamOptions,
     Usage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 OPENAI_TOOL_CALL_PROVIDERS: set[str] = {"openai", "openai-codex", "opencode"}
 

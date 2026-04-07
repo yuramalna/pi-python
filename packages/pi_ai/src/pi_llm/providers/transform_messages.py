@@ -5,7 +5,7 @@ from __future__ import annotations
 import time
 from collections.abc import Callable
 
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     Message,
     Model,

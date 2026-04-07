@@ -4,7 +4,7 @@ import asyncio
 
 import pytest
 
-from pi_ai import (
+from pi_llm import (
     AssistantMessage,
     Context,
     SimpleStreamOptions,
@@ -18,7 +18,7 @@ from pi_ai import (
     stream,
     stream_simple,
 )
-from pi_ai.providers.faux import (
+from pi_llm.providers.faux import (
     RegisterFauxProviderOptions,
     faux_assistant_message,
     faux_text,
@@ -193,7 +193,7 @@ class TestErrorHandling:
     @pytest.mark.asyncio
     async def test_no_provider_raises(self):
         with pytest.raises(ValueError, match="No API provider registered"):
-            from pi_ai.types import Model
+            from pi_llm.types import Model
             fake_model = Model(id="x", name="x", api="nonexistent-api", provider="x")
             await complete(fake_model, _ctx())
 

@@ -8,7 +8,7 @@ import time
 
 import pytest
 
-from pi_agent import (
+from pi_llm_agent import (
     AgentContext,
     AgentLoopConfig,
     AgentMessageEndEvent,
@@ -17,11 +17,11 @@ from pi_agent import (
     agent_loop,
     agent_loop_continue,
 )
-from pi_agent.types import (
+from pi_llm_agent.types import (
     ToolExecutionEndEvent,
     ToolExecutionStartEvent,
 )
-from pi_ai.types import (
+from pi_llm.types import (
     AssistantMessage,
     DoneEvent,
     Model,
@@ -30,7 +30,7 @@ from pi_ai.types import (
     Usage,
     UserMessage,
 )
-from pi_ai.utils.event_stream import AssistantMessageEventStream
+from pi_llm.utils.event_stream import AssistantMessageEventStream
 
 # ---------------------------------------------------------------------------
 # Helpers
@@ -576,7 +576,7 @@ async def test_inject_queued_messages_after_tool_calls():
     assert tool_ends[1].is_error is False
 
     # Queued message should appear in events after both tool result messages
-    from pi_agent.types import AgentMessageStartEvent
+    from pi_llm_agent.types import AgentMessageStartEvent
     event_sequence = []
     for e in events:
         if not isinstance(e, AgentMessageStartEvent):

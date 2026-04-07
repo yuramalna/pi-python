@@ -17,7 +17,7 @@ The `ThinkingLevel` type defines five levels of reasoning effort:
 Pass the level via `SimpleStreamOptions`:
 
 ```python
-from pi_ai import SimpleStreamOptions
+from pi_llm import SimpleStreamOptions
 
 options = SimpleStreamOptions(reasoning="medium")
 ```
