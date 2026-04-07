@@ -5,7 +5,7 @@
 Install both packages:
 
 ```bash
-pip install pi-ai pi-agent
+pip install pi-ai pi-ai-agent
 ```
 
 ## Set up your API key
