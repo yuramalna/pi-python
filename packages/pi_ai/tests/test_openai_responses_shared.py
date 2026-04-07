@@ -181,6 +181,43 @@ def test_assistant_thinking_with_signature():
     assert msgs[0]["id"] == "rs_123"
 
 
+def test_assistant_thinking_signature_strips_null_status():
+    """Regression: reasoning items with status=null must not be replayed verbatim."""
+    sig = json.dumps({
+        "type": "reasoning", "id": "rs_123",
+        "summary": [{"type": "summary_text", "text": "thought"}],
+        "encrypted_content": "gAAAAfake",
+        "status": None,
+    })
+    assistant = AssistantMessage(
+        content=[ThinkingContent(thinking="thought", thinking_signature=sig)],
+        provider="openai", api="openai-responses", model="gpt-4o", timestamp=0,
+    )
+    ctx = Context(messages=[assistant])
+    msgs = convert_responses_messages(_model(), ctx, set())
+    reasoning = msgs[0]
+    assert reasoning["type"] == "reasoning"
+    assert "status" not in reasoning, "status=null must be stripped to avoid OpenAI 400 error"
+
+
+def test_assistant_thinking_signature_preserves_valid_status():
+    """Valid status values like 'completed' should be preserved on replay."""
+    sig = json.dumps({
+        "type": "reasoning", "id": "rs_456",
+        "summary": [{"type": "summary_text", "text": "done"}],
+        "encrypted_content": "gAAAAfake",
+        "status": "completed",
+    })
+    assistant = AssistantMessage(
+        content=[ThinkingContent(thinking="done", thinking_signature=sig)],
+        provider="openai", api="openai-responses", model="gpt-4o", timestamp=0,
+    )
+    ctx = Context(messages=[assistant])
+    msgs = convert_responses_messages(_model(), ctx, set())
+    reasoning = msgs[0]
+    assert reasoning["status"] == "completed"
+
+
 def test_assistant_tool_call_compound_id():
     tc = ToolCall(id="call_abc|fc_def", name="get_weather", arguments={"city": "LA"})
     assistant = AssistantMessage(

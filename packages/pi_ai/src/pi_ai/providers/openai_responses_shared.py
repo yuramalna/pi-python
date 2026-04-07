@@ -177,6 +177,10 @@ def convert_responses_messages(
                 if block.type == "thinking":
                     if block.thinking_signature:
                         reasoning_item = json.loads(block.thinking_signature)
+                        # Strip status=null — OpenAI rejects null on input
+                        # (valid values: "in_progress", "completed", "incomplete")
+                        if reasoning_item.get("status") is None:
+                            reasoning_item.pop("status", None)
                         output.append(reasoning_item)
 
                 elif block.type == "text":
