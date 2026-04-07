@@ -30,15 +30,15 @@ jobs:
         run: pip install build twine
 
       - name: Build pi-llm
-        run: python -m build packages/pi_ai
+        run: python -m build packages/pi_llm
 
       - name: Build pi-llm-agent
-        run: python -m build packages/pi_agent
+        run: python -m build packages/pi_llm_agent
 
       - name: Publish to PyPI
         env:
           TWINE_USERNAME: __token__
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
-          twine upload packages/pi_ai/dist/*
-          twine upload packages/pi_agent/dist/*
+          twine upload packages/pi_llm/dist/*
+          twine upload packages/pi_llm_agent/dist/*

@@ -195,7 +195,7 @@ This runs before JSON Schema validation, so the transformed arguments must match
 `AgentTool` has a `to_tool()` method that produces a pi-llm `Tool` for inclusion in LLM context. The agent calls this internally, but you can use it directly:
 
 ```python
-pi_ai_tool = my_agent_tool.to_tool()
+pi_llm_tool = my_agent_tool.to_tool()
 # Tool(name="...", description="...", parameters={...})
 ```
 

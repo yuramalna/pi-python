@@ -1,6 +1,6 @@
 # pi-llm-agent
 
-General-purpose agent framework with tool execution and event streaming. Built on [pi-ai](../pi_ai/).
+General-purpose agent framework with tool execution and event streaming. Built on [pi-llm](../pi_llm/).
 
 ## Features
 

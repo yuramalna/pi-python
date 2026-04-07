@@ -20,8 +20,8 @@
 
 | Package | Description | Install |
 |---------|-------------|---------|
-| **[pi-llm](packages/pi_ai/)** | Typed streaming interface for LLM calls &mdash; tool calling, extended thinking, cost tracking | `pip install pi-llm` |
-| **[pi-llm-agent](packages/pi_agent/)** | Stateful agent framework &mdash; multi-turn tool execution, hooks, event streaming | `pip install pi-llm-agent` |
+| **[pi-llm](packages/pi_llm/)** | Typed streaming interface for LLM calls &mdash; tool calling, extended thinking, cost tracking | `pip install pi-llm` |
+| **[pi-llm-agent](packages/pi_llm_agent/)** | Stateful agent framework &mdash; multi-turn tool execution, hooks, event streaming | `pip install pi-llm-agent` |
 
 ## Quick Start
 
@@ -153,9 +153,9 @@ Full documentation at **[yuramalna.github.io/pi-python](https://yuramalna.github
 | | |
 |---|---|
 | [Getting Started](https://yuramalna.github.io/pi-python/getting-started/) | Install, first LLM call, first agent |
-| [pi-ai Concepts](https://yuramalna.github.io/pi-python/pi_ai/) | Streaming, events, tools, thinking, cost tracking |
-| [pi-agent Concepts](https://yuramalna.github.io/pi-python/pi_agent/) | Agent lifecycle, loop, hooks, steering, cancellation |
-| [API Reference](https://yuramalna.github.io/pi-python/pi_ai/reference/) | Auto-generated from source docstrings |
+| [pi-llm Concepts](https://yuramalna.github.io/pi-python/pi_llm/) | Streaming, events, tools, thinking, cost tracking |
+| [pi-llm-agent Concepts](https://yuramalna.github.io/pi-python/pi_llm_agent/) | Agent lifecycle, loop, hooks, steering, cancellation |
+| [API Reference](https://yuramalna.github.io/pi-python/pi_llm/reference/) | Auto-generated from source docstrings |
 
 ## Development
 
@@ -165,18 +165,18 @@ cd pi-python
 python -m venv .venv && source .venv/bin/activate
 
 # Install both packages in dev mode
-pip install -e "packages/pi_ai[dev]"
-pip install -e "packages/pi_agent[dev]"  # PyPI name: pi-llm-agent
+pip install -e "packages/pi_llm[dev]"
+pip install -e "packages/pi_llm_agent[dev]"  # PyPI name: pi-llm-agent
 
 # Install docs dependencies
 pip install mkdocs-material 'mkdocstrings[python]' mkdocs-gen-files mkdocs-section-index
 
 # Run tests (322 total)
-pytest packages/pi_ai/tests/ --ignore=packages/pi_ai/tests/integration
-pytest packages/pi_agent/tests/ --ignore=packages/pi_agent/tests/integration
+pytest packages/pi_llm/tests/ --ignore=packages/pi_llm/tests/integration
+pytest packages/pi_llm_agent/tests/ --ignore=packages/pi_llm_agent/tests/integration
 
 # Lint
-ruff check packages/pi_ai/src/ packages/pi_agent/src/
+ruff check packages/pi_llm/src/ packages/pi_llm_agent/src/
 
 # Serve docs locally
 mkdocs serve

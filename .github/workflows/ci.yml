@@ -24,21 +24,21 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e "packages/pi_ai[dev]"
-          pip install -e "packages/pi_agent[dev]"
+          pip install -e "packages/pi_llm[dev]"
+          pip install -e "packages/pi_llm_agent[dev]"
           pip install mkdocs-material 'mkdocstrings[python]' mkdocs-gen-files mkdocs-section-index
 
       - name: Lint with ruff
         run: |
-          ruff check packages/pi_ai/src/ packages/pi_agent/src/
+          ruff check packages/pi_llm/src/ packages/pi_llm_agent/src/
 
       - name: Test pi-ai
         run: |
-          pytest packages/pi_ai/tests/ --ignore=packages/pi_ai/tests/integration -v --tb=short
+          pytest packages/pi_llm/tests/ --ignore=packages/pi_llm/tests/integration -v --tb=short
 
       - name: Test pi-agent
         run: |
-          pytest packages/pi_agent/tests/ --ignore=packages/pi_agent/tests/integration -v --tb=short
+          pytest packages/pi_llm_agent/tests/ --ignore=packages/pi_llm_agent/tests/integration -v --tb=short
 
       - name: Build docs
         run: |

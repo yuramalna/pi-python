@@ -2,7 +2,7 @@
 
 General-purpose agent framework with tool execution and event streaming.
 
-Built on [pi-llm](../pi_ai/index.md), pi-llm-agent provides a stateful `Agent` class that manages the multi-turn loop of prompting an LLM, executing tool calls, and repeating until the task is done.
+Built on [pi-llm](../pi_llm/index.md), pi-llm-agent provides a stateful `Agent` class that manages the multi-turn loop of prompting an LLM, executing tool calls, and repeating until the task is done.
 
 ## Key Concepts
 

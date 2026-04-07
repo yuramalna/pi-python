@@ -12,13 +12,13 @@ import mkdocs_gen_files
 PACKAGES = [
     {
         "name": "pi_llm",
-        "src": Path("packages/pi_ai/src/pi_llm"),
-        "doc_prefix": "pi_ai/reference",
+        "src": Path("packages/pi_llm/src/pi_llm"),
+        "doc_prefix": "pi_llm/reference",
     },
     {
         "name": "pi_llm_agent",
-        "src": Path("packages/pi_agent/src/pi_llm_agent"),
-        "doc_prefix": "pi_agent/reference",
+        "src": Path("packages/pi_llm_agent/src/pi_llm_agent"),
+        "doc_prefix": "pi_llm_agent/reference",
     },
 ]
 
