@@ -5,13 +5,9 @@ on:
     tags:
       - "v*"
 
-permissions:
-  id-token: write
-
 jobs:
   publish:
     runs-on: ubuntu-latest
-    environment: pypi
     steps:
       - uses: actions/checkout@v4
 
@@ -21,20 +17,18 @@ jobs:
           python-version: "3.12"
 
       - name: Install build tools
-        run: pip install build
+        run: pip install build twine
 
-      - name: Build pi-ai
+      - name: Build pi-llm
         run: python -m build packages/pi_ai
 
-      - name: Build pi-ai-agent
+      - name: Build pi-llm-agent
         run: python -m build packages/pi_agent
 
-      - name: Publish pi-ai
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: packages/pi_ai/dist/
-
-      - name: Publish pi-ai-agent
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          packages-dir: packages/pi_agent/dist/
+      - name: Publish to PyPI
+        env:
+          TWINE_USERNAME: __token__
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
+        run: |
+          twine upload packages/pi_ai/dist/*
+          twine upload packages/pi_agent/dist/*
